@@ -18,51 +18,45 @@ RSpec.describe Position do
       end
     end
 
-    context 'when x is less than 0' do
-      let(:x) { rand(-100..-1) }
-
+    shared_examples 'expect valid to be false' do
       it 'returns false' do
         expect(subject.valid?).to be false
+      end
+    end
+
+    context 'when x is less than 0' do
+      include_examples 'expect valid to be false' do
+        let(:x) { rand(-100..-1) }
       end
     end
 
     context 'when x is greater than table length' do
-      let(:x) { table_length + rand(100) }
-
-      it 'returns false' do
-        expect(subject.valid?).to be false
+      include_examples 'expect valid to be false' do
+        let(:x) { table_length + rand(100) }
       end
     end
 
     context 'when x is equal to table length' do
-      let(:x) { table_length }
-
-      it 'returns false' do
-        expect(subject.valid?).to be false
+      include_examples 'expect valid to be false' do
+        let(:x) { table_length }
       end
     end
 
     context 'when y is less than 0' do
-      let(:y) { rand(-100..-1) }
-
-      it 'returns false' do
-        expect(subject.valid?).to be false
+      include_examples 'expect valid to be false' do
+        let(:y) { rand(-100..-1) }
       end
     end
 
     context 'when y is greater than table breadth' do
-      let(:y) { table_breadth + rand(100) }
-
-      it 'returns false' do
-        expect(subject.valid?).to be false
+      include_examples 'expect valid to be false' do
+        let(:y) { table_breadth + rand(100) }
       end
     end
 
     context 'when y is equal to table breadth' do
-      let(:y) { table_breadth }
-
-      it 'returns false' do
-        expect(subject.valid?).to be false
+      include_examples 'expect valid to be false' do
+        let(:y) { table_breadth }
       end
     end
   end
