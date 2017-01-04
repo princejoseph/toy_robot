@@ -10,13 +10,13 @@ class Position < Struct.new(:x, :y)
     next_x, next_y = x, y
     case direction
     when 'NORTH'
-      next_x += 1
-    when 'SOUTH'
-      next_x -= 1
-    when 'EAST'
       next_y += 1
-    when 'WEST'
+    when 'SOUTH'
       next_y -= 1
+    when 'EAST'
+      next_x += 1
+    when 'WEST'
+      next_x -= 1
     end
     Position.new(next_x, next_y)
   end

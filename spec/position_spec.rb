@@ -68,23 +68,14 @@ RSpec.describe Position do
     context 'when direction is north' do
       let(:direction) { 'NORTH' }
 
-      it 'gives new position with x + 1 and y' do
-        expect(next_position.x).to eq(x + 1)
-        expect(next_position.y).to eq(y)
+      it 'gives new position with x and y + 1' do
+        expect(next_position.x).to eq(x)
+        expect(next_position.y).to eq(y + 1)
       end
     end
 
     context 'when direction is south' do
       let(:direction) { 'SOUTH' }
-
-      it 'gives new position with x - 1 and y' do
-        expect(next_position.x).to eq(x - 1)
-        expect(next_position.y).to eq(y)
-      end
-    end
-
-    context 'when direction is west' do
-      let(:direction) { 'WEST' }
 
       it 'gives new position with x and y - 1' do
         expect(next_position.x).to eq(x)
@@ -92,12 +83,21 @@ RSpec.describe Position do
       end
     end
 
+    context 'when direction is west' do
+      let(:direction) { 'WEST' }
+
+      it 'gives new position with x - 1 and y' do
+        expect(next_position.x).to eq(x - 1)
+        expect(next_position.y).to eq(y)
+      end
+    end
+
     context 'when direction is east' do
       let(:direction) { 'EAST' }
 
-      it 'gives new position with x and y + 1' do
-        expect(next_position.x).to eq(x)
-        expect(next_position.y).to eq(y + 1)
+      it 'gives new position with x + 1 and y' do
+        expect(next_position.x).to eq(x + 1)
+        expect(next_position.y).to eq(y)
       end
     end
   end
