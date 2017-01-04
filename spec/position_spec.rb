@@ -1,17 +1,18 @@
 require 'spec_helper'
 
-require_relative '../lib/position'
+require 'position'
 
 RSpec.describe Position do
+  subject { described_class.new(x, y) }
+
+  let(:table_length) { Position::TABLE_LENGTH }
+  let(:table_breadth) { Position::TABLE_BREADTH }
+
+  let(:x) { rand(0...table_length) }
+  let(:y) { rand(0...table_breadth) }
+
+
   describe '#valid?' do
-    subject { described_class.new(x, y) }
-
-    let(:table_length) { TABLE_DIMENSIONS[:length] }
-    let(:table_breadth) { TABLE_DIMENSIONS[:breadth] }
-
-    let(:x) { rand(0...table_length) }
-    let(:y) { rand(0...table_breadth) }
-
     context 'when x and y are inside table length and breadth' do
       it 'returns true' do
         expect(subject.valid?).to be true
@@ -57,6 +58,46 @@ RSpec.describe Position do
     context 'when y is equal to table breadth' do
       include_examples 'expect valid to be false' do
         let(:y) { table_breadth }
+      end
+    end
+  end
+
+  describe '#next' do
+    let(:next_position) { subject.next(direction) }
+
+    context 'when direction is north' do
+      let(:direction) { 'NORTH' }
+
+      it 'gives new position with x + 1 and y' do
+        expect(next_position.x).to eq(x + 1)
+        expect(next_position.y).to eq(y)
+      end
+    end
+
+    context 'when direction is south' do
+      let(:direction) { 'SOUTH' }
+
+      it 'gives new position with x - 1 and y' do
+        expect(next_position.x).to eq(x - 1)
+        expect(next_position.y).to eq(y)
+      end
+    end
+
+    context 'when direction is west' do
+      let(:direction) { 'WEST' }
+
+      it 'gives new position with x and y - 1' do
+        expect(next_position.x).to eq(x)
+        expect(next_position.y).to eq(y - 1)
+      end
+    end
+
+    context 'when direction is east' do
+      let(:direction) { 'EAST' }
+
+      it 'gives new position with x and y + 1' do
+        expect(next_position.x).to eq(x)
+        expect(next_position.y).to eq(y + 1)
       end
     end
   end
