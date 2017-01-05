@@ -89,7 +89,7 @@ RSpec.describe Command do
     context 'when command is robot command' do
       let(:command) { 'MOVE' }
 
-      it 'will return true' do
+      it 'will return false' do
         expect(subject.exit_command?).to be false
       end
     end
@@ -97,7 +97,7 @@ RSpec.describe Command do
     context 'any other command' do
       let(:command) { 'A RANDOM COMMAND' }
 
-      it 'will return true' do
+      it 'will return false' do
         expect(subject.exit_command?).to be false
       end
     end
