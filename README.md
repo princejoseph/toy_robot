@@ -1,11 +1,11 @@
- ```
+
   ______               ____        __          __     _____ _                 __      __             __
  /_  __/___  __  __   / __ \____  / /_  ____  / /_   / ___/(_)___ ___  __  __/ /___ _/ /_____  _____/ /
   / / / __ \/ / / /  / /_/ / __ \/ __ \/ __ \/ __/   \__ \/ / __ `__ \/ / / / / __ `/ __/ __ \/ ___/ /
  / / / /_/ / /_/ /  / _, _/ /_/ / /_/ / /_/ / /_    ___/ / / / / / / / /_/ / / /_/ / /_/ /_/ / /  /_/
 /_/  \____/\__, /  /_/ |_|\____/_.___/\____/\__/   /____/_/_/ /_/ /_/\__,_/_/\__,_/\__/\____/_/  (_)
           /____/
-```
+
 [![CircleCI](https://circleci.com/gh/princejoseph/toy_robot.svg?style=shield)](https://circleci.com/gh/princejoseph/toy_robot)
 [![Code Climate](https://codeclimate.com/github/princejoseph/toy_robot/badges/gpa.svg)](https://codeclimate.com/github/princejoseph/toy_robot)
 [![Test Coverage](https://codeclimate.com/github/princejoseph/toy_robot/badges/coverage.svg)](https://codeclimate.com/github/princejoseph/toy_robot/coverage)
