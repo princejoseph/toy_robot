@@ -3,7 +3,7 @@ require 'spec_helper'
 require 'direction'
 
 RSpec.describe Direction do
-  subject { Direction.new(direction) }
+  subject { described_class.new(direction) }
 
   describe '#next' do
     let(:next_direction) { subject.next }
