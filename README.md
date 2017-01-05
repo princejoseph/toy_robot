@@ -11,26 +11,19 @@ Toy Robot Simulator in Ruby
 1. Make sure you have ruby >= 2.3
 2. Install the bundler gem by running:
 
-```
-gem install bundler
-```
+   ```gem install bundler```
+
 3. Clone the repo:
 
-```
-git clone git@github.com:princejoseph/toy_robot.git
-```
+   ```git clone git@github.com:princejoseph/toy_robot.git```
 
 4. Change to application directory:
 
-```
-cd toy_robot
-```
+   ```cd toy_robot```
 
 5. Install dependencies:
 
-```
-bundle install
-```
+   ```bundle install```
 
 ## Usage
 
@@ -75,14 +68,6 @@ in the direction it is currently facing.
 in the specified direction
 without changing the position of the robot.
 * `REPORT` will announce the X,Y and F of the robot.
-This can be in any form, but standard output is sufficient.
-
-* A robot that is not on the table can choose
-to ignore the `MOVE`, `LEFT`, `RIGHT` and `REPORT` commands.
-* Input can be from a file, or from standard input, as the developer chooses.
-* Provide test data to exercise the application.
-* It is not required to provide any graphical output
-showing the movement of the toy robot.
 
 ## Constraints
 
