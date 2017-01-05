@@ -1,4 +1,5 @@
 require 'readline'
+require_relative 'autocompletion'
 require 'colorize'
 require 'artii'
 require_relative 'lib/toy_robot'
