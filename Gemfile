@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rspec'
+gem 'colorize'
+gem 'artii'
 
 group :test do
   gem 'simplecov'

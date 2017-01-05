@@ -1,8 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    artii (2.1.2)
     codeclimate-test-reporter (1.0.4)
       simplecov
+    colorize (0.8.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
     json (2.0.2)
@@ -29,7 +31,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  artii
   codeclimate-test-reporter (~> 1.0.0)
+  colorize
   rspec
   simplecov
 

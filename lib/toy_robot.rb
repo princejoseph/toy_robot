@@ -1,26 +1,43 @@
-require 'position'
-require 'direction'
+require_relative 'position'
+require_relative 'direction'
 
 class ToyRobot
   attr_reader :position, :direction
 
   def place(x, y, direction)
     position = Position.new(x, y)
-    return unless position.valid?
-    @position = position
-    @direction = direction
+    if position.valid?
+      @position = position
+      @direction = direction
+    else
+      puts 'Please enter a position within table 5,5.'
+    end
   end
 
   def move
-    @position = next_position if safe_to_move?
+    if !placed?
+      puts 'Please place the robot first!'
+    elsif !safe_to_move?
+      puts 'It is not safe to move to the entered position.'
+    else
+      @position = next_position
+    end
   end
 
   def turn_left
-    @direction = direction_obj.previous if placed?
+    if placed?
+      @direction = direction_obj.previous
+    else
+      puts 'Please place the robot first!'
+    end
   end
 
   def turn_right
-    @direction = direction_obj.next if placed?
+    if placed?
+      @direction = direction_obj.next
+    else
+      puts 'Please place the robot first!'
+    end
   end
 
   def report
@@ -42,7 +59,7 @@ class ToyRobot
   end
 
   def safe_to_move?
-    placed? && next_position.valid?
+    next_position.valid?
   end
 
   def next_position
