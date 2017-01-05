@@ -18,7 +18,8 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 # Start codeclimate test coverage
-require "simplecov"
+require 'simplecov'
+require 'codeclimate-test-reporter'
 SimpleCov.start
 
 RSpec.configure do |config|
