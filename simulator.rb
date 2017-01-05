@@ -1,3 +1,4 @@
+require 'readline'
 require 'colorize'
 require 'artii'
 require_relative 'lib/toy_robot'
@@ -13,9 +14,9 @@ puts "\n\nPlease enter commands (exit to leave):\n".cyan
 
 loop.with_index do |_, i|
   # To create an irb console like feel
-  print "trs :#{(i + 1).to_s.rjust(3, '0')} > ".green
+  prompt = "trs :#{(i + 1).to_s.rjust(3, '0')} > ".green
   # get input from the user
-  input = gets.chomp
+  input = Readline.readline(prompt, true).to_s.strip
   finder = CommandFinder.new(robot)
   command_obj = finder.determine_command_object(input)
   command_obj.execute
