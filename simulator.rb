@@ -2,6 +2,7 @@ require 'colorize'
 require 'artii'
 require_relative 'lib/toy_robot'
 require_relative 'lib/command'
+require_relative 'lib/command_finder'
 
 a = Artii::Base.new :font => 'slant'
 puts a.asciify('Toy Robot Simulator!')
@@ -15,7 +16,8 @@ loop.with_index do |_, i|
   print "trs :#{(i + 1).to_s.rjust(3, '0')} > ".green
   # get input from the user
   input = gets.chomp
-  command_obj = Command.new(input, robot)
+  finder = CommandFinder.new(robot)
+  command_obj = finder.determine_command_object(input)
   command_obj.execute
-  break if command_obj.exit_command?
+  break if command_obj.exit?
 end
