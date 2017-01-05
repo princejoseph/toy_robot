@@ -1,0 +1,3 @@
+machine:
+  environment:
+    CODECLIMATE_REPO_TOKEN: f4bd1bb78098583e152c04b88a57fcf8af53474ec4f78401fec6e2d4a2c6f3cf
