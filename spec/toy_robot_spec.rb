@@ -13,6 +13,13 @@ RSpec.describe ToyRobot do
   let(:y) { rand(0...table_breadth) }
   let(:direction) { %w(NORTH EAST SOUTH WEST).sample }
 
+  shared_examples 'expect position and direction not to be set' do
+    it 'will not set the position and direction' do
+      expect(subject.position).to be_nil
+      expect(subject.direction).to be_nil
+    end
+  end
+
   describe '#place' do
     before { subject.place(x, y, direction) }
 
@@ -25,12 +32,9 @@ RSpec.describe ToyRobot do
     end
 
     context 'when placed outside the table' do
-      # making x greater than table length
-      let(:x) { table_length + rand(100) }
-
-      it 'will not set the position and direction' do
-        expect(subject.position).to be_nil
-        expect(subject.direction).to be_nil
+      include_examples 'expect position and direction not to be set' do
+        # making x greater than table length
+        let(:x) { table_length + rand(100) }
       end
     end
   end
@@ -64,11 +68,8 @@ RSpec.describe ToyRobot do
     end
 
     context 'when robot is not placed' do
-      before { subject.move }
-
-      it 'will not set the position and direction as the robot is placed' do
-        expect(subject.position).to be_nil
-        expect(subject.direction).to be_nil
+      include_examples 'expect position and direction not to be set' do
+        before { subject.move }
       end
     end
   end
@@ -112,11 +113,8 @@ RSpec.describe ToyRobot do
     end
 
     context 'when robot is not placed' do
-      before { subject.turn_left }
-
-      it 'will not set the position and direction as the robot is placed' do
-        expect(subject.position).to be_nil
-        expect(subject.direction).to be_nil
+      include_examples 'expect position and direction not to be set' do
+        before { subject.turn_left }
       end
     end
   end
@@ -161,11 +159,8 @@ RSpec.describe ToyRobot do
     end
 
     context 'when robot is not placed' do
-      before { subject.turn_right }
-
-      it 'will not set the position and direction as the robot is placed' do
-        expect(subject.position).to be_nil
-        expect(subject.direction).to be_nil
+      include_examples 'expect position and direction not to be set' do
+        before { subject.turn_right }
       end
     end
   end
