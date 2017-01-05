@@ -9,12 +9,16 @@ Toy Robot Simulator in Ruby
 ## Setup
 1. Make sure you have ruby >= 2.3
 2. Install the bundler gem by running:
+
    ```gem install bundler```
 3. Clone the repo:
+
    ```git clone git@github.com:princejoseph/toy_robot.git```
 4. Change to application directory:
+
    ```cd toy_robot```
 5. Install dependencies:
+
    ```bundle install```
 
 ## Usage
