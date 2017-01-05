@@ -11,7 +11,9 @@ robot = ToyRobot.new
 puts "\n\nPlease enter commands (exit to leave):\n".cyan
 
 loop.with_index do |_, i|
+  # To create an irb console like feel
   print "trs :#{(i + 1).to_s.rjust(3, '0')} > ".green
+  # get input from the user
   input = gets.chomp
   command_obj = Command.new(input, robot)
   command_obj.execute
