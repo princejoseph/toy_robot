@@ -8,7 +8,7 @@ Toy Robot Simulator in Ruby
 
 ## Setup
 
-1. Make sure you have ruby >= 2.3
+1. Make sure you have ruby >= 2.0
 2. Install the bundler gem by running:
 
    ```gem install bundler```
