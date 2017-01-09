@@ -30,6 +30,7 @@ Toy Robot Simulator in Ruby
 * Run `bin/toy_robot` or `ruby simulator.rb` from the application directory.
 * This will fire up a [irb](https://en.wikipedia.org/wiki/Interactive_Ruby_Shell) like console
 * In the console, we will be able to enter the commands for the toy robot.
+* Up arrow works and you can use `TAB` key for autocompleting commands.
 
 ## Description
 
