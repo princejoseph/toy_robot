@@ -22,4 +22,5 @@ loop.with_index do |_, i|
   command_obj = finder.determine_command_object(input)
   command_obj.execute
   break if command_obj.exit?
+  puts "=> #{robot.sinspect}".light_cyan.italic
 end

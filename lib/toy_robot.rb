@@ -48,10 +48,18 @@ class ToyRobot
     end
   end
 
+  def sinspect
+    "#<ToyRobot#{(" [#{report_string}]") if placed?}>"
+  end
+
   private
 
   def placed?
     !@position.nil?
+  end
+
+  def report_string
+    [@position.x, @position.y, @direction].join(',')
   end
 
   def direction_obj

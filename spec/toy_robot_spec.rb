@@ -180,4 +180,20 @@ RSpec.describe ToyRobot do
       end
     end
   end
+
+  describe '#sinspect' do
+    context 'when not placed' do
+      it 'returns x, y and direction in the required format' do
+        expect(subject.sinspect).to eq('#<ToyRobot>')
+      end
+    end
+
+    context 'when placed' do
+      before { subject.place(x, y, direction) }
+
+      it 'returns x, y and direction in the required format' do
+        expect(subject.sinspect).to eq("#<ToyRobot [#{x},#{y},#{direction}]>")
+      end
+    end
+  end
 end
