@@ -42,7 +42,7 @@ class ToyRobot
 
   def report
     if placed?
-      puts [@position.x, @position.y, @direction].join(',')
+      puts report_string
     else
       puts 'Toy Robot not yet placed'
     end
